@@ -25,16 +25,16 @@ color: ${theme.colors.font}
 }
 
 a{
-    text-decoration:none
+    text-decoration: none
 }
 
 ul{
-    list-style:none
+    list-style: none
 }
 
 button{
     background-color: unset;
-    border:none
+    border: none
 }
 
 section:nth-of-type(odd){
