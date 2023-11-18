@@ -1,40 +1,91 @@
-import React from 'react';
+import React from "react";
 import styled from "styled-components";
-import photo from '../../../assets/images/foto.webp'
-import {FlexWrapper} from "../../../components/FlexWrapper";
+import photo from "../../../assets/images/foto.webp";
+import { FlexWrapper } from "../../../components/FlexWrapper";
+import { Container } from "../../../components/Сontainer";
+import { theme } from "../../../styles/Theme";
 
 export const Main = () => {
     return (
         <StyledMain>
-            <FlexWrapper align={"center"} justify={"space-around"}>
-                <div>
-                    <span>Hi There</span>
-                    <Name>I am Alexander Shchirov</Name>
-                    <MainTitile>A Web Developer.</MainTitile>
-                </div>
-                <Photo src={photo} alt="my foto"/>
-            </FlexWrapper>
+            <Container>
+                <FlexWrapper align={"center"} justify={"space-between"}>
+                    <div>
+                        <SmallText>Hi There</SmallText>
+                        <Name>
+                            I am <span>Alexander Shchirov</span>
+                        </Name>
+                        <MainTitile>
+                            Rescuer before - a Web developer now.
+                        </MainTitile>
+                    </div>
+                    <PhotoWrapper>
+                        <Photo src={photo} alt="my foto" />
+                    </PhotoWrapper>
+                </FlexWrapper>
+            </Container>
         </StyledMain>
     );
 };
 
 const StyledMain = styled.div`
-  min-height: 100vh;
-  background-color: #fff4d0;
-`
+    min-height: 100vh;
+    background-color: #fff4d0;
+    display: flex;
+    background-color: ${theme.colors.primaryBg};
+`;
 
+const PhotoWrapper = styled.div`
+    position: relative;
+    z-index: 0;
 
+    &::before {
+        content: "";
+        width: 360px;
+        height: 470px;
+        border: 5px solid ${theme.colors.accent};
+
+        position: absolute;
+        top: -24px;
+        left: -24px;
+        z-index: -1;
+    }
+`;
 
 const Photo = styled.img`
-  width: 350px;
-  height: 430px;
-  object-fit: cover;
-
-`
+    width: 350px;
+    height: 430px;
+    object-fit: cover;
+`;
 const MainTitile = styled.h1`
+    font-weight: 400;
+`;
 
-`
+const Name = styled.h2`
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 700;
+    font-size: 50px;
+    letter-spacing: 0.05em;
+    margin: 10px 0;
 
-const Name= styled.h2`
+    span {
+        position: relative;
+        z-index: 0;
+        &::before {
+            content: "";
+            display: inline-block;
+            width: 100%;
+            height: 20px;
+            background-color: ${theme.colors.accent};
 
-`
+            position: absolute;
+            bottom: 0;
+            z-index: -1;
+        }
+    }
+`;
+
+const SmallText = styled.span`
+    font-weight: 400;
+    font-size: 14px;
+`;
