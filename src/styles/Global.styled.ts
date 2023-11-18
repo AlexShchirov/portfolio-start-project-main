@@ -26,23 +26,44 @@ line-height: 1.2;
 }
 
 a{
-    text-decoration: none
+    text-decoration: none;
+    color: ${theme.colors.font};
 }
 
 ul{
-    list-style: none
+    list-style: none;
 }
 
 button{
     background-color: unset;
-    border: none
+    border: none;
+    cursor: pointer;
+    color: ${theme.colors.font};
 }
 
-section:nth-of-type(odd){
+section{
+    padding: 100px;
+}
+
+section:nth-of-type(even){
     background-color: ${theme.colors.primaryBg};
 }
-section:nth-of-type(even){
+section:nth-of-type(odd){
     background-color: ${theme.colors.secondaryBg};
 }
+
+h3{
+    font-family: "Josefin Sans";
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+p{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
 
 `;
