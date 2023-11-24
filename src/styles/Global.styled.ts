@@ -23,6 +23,7 @@ font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
 -moz-osx-font-smoothing: grayscale;
 color: ${theme.colors.font};
 line-height: 1.2;
+min-width: 360px;
 }
 
 a{
@@ -42,7 +43,11 @@ button{
 }
 
 section{
-    padding: 100px;
+    padding: 100px 0;
+
+    @media ${theme.media.mobile}{
+        padding: 80px 0;
+    }
 }
 
 section:nth-of-type(even){
