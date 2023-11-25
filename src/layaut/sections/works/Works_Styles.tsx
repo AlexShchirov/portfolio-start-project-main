@@ -1,33 +1,17 @@
-import React from "react";
-import styled, { ThemeContext } from "styled-components";
-import { Link } from "../../../components/Link";
-import { theme } from "../../../styles/Theme";
+import styled from "styled-components";
+import { FlexWrapper } from "../../../components/FlexWrapper";
 import { Button } from "../../../components/Button";
+import { theme } from "../../../styles/Theme";
+import { Link } from "../../../components/Link";
 
-type WorkPropsType = {
-    title: string;
-    text: string;
-    src: string;
-};
-export const Work = (props: WorkPropsType) => {
-    return (
-        <StyledWork>
-            <ImageWrapper>
-                <Image src={props.src} alt="" />
-                <Button>view project</Button>
-            </ImageWrapper>
+const Works = styled.section`
+    ${FlexWrapper} {
+        gap: 30px;
+    }
+`;
 
-            <Discription>
-                <Title>{props.title}</Title>
-                <Text>{props.text}</Text>
-                <Link href={"#"}>demo</Link>
-                <Link href={"#"}>code</Link>
-            </Discription>
-        </StyledWork>
-    );
-};
 
-const StyledWork = styled.div`
+const Work = styled.div`
     background-color: ${theme.colors.secondaryBg};
     width: 330px;
     flex-grow: 1;
@@ -107,3 +91,14 @@ const Title = styled.h3``;
 const Text = styled.p`
     margin: 14px 0 10px;
 `;
+
+
+export const S = {
+    Works,
+    Work,
+    ImageWrapper,
+    Image,
+    Discription,
+    Title,
+    Text,
+}

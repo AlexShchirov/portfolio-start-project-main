@@ -4,7 +4,7 @@ import { theme } from "./Theme";
 export const GlobalStyle = createGlobalStyle`
 
 *,
-*::bofore,
+*::before,
 *::after{
 margin: 0;
 padding: 0;
