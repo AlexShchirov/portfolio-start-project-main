@@ -2,9 +2,7 @@ import styled from "styled-components";
 import { font } from "../../../styles/Commons";
 import { theme } from "../../../styles/Theme";
 
-
-
-const Main = styled.div`
+const Main = styled.section`
     min-height: 100vh;
     /* background-color: #fff4d0; */
     display: flex;
@@ -42,7 +40,7 @@ const Photo = styled.img`
     width: 350px;
     height: 430px;
     object-fit: cover;
-    margin-right: 20px; // 20px
+    margin-right: 20px;
 
     @media ${theme.media.mobile} {
         width: 310px;
@@ -50,16 +48,18 @@ const Photo = styled.img`
     }
 `;
 const MainTitile = styled.h1`
-    ${font({ weight: 400, Fmax: 27, Fmin: 20 })}
+    ${font({ weight: 400, Fmax: 27, Fmin: 20 })};
+
+    p {
+        display: none;
+    }
 `;
-
-
 
 const Name = styled.h2`
     ${font({
         family: "'Josefin Sans', sans-serif",
         weight: 700,
-        Fmax: 50,
+        Fmax: 42, //50 было
         Fmin: 32,
     })}
     letter-spacing: 0.05em;
@@ -89,10 +89,11 @@ const Name = styled.h2`
 `;
 
 const SmallText = styled.span`
+    /* position: relative;
+    top:10px; */
     font-weight: 400;
     font-size: 14px;
 `;
-
 
 export const S = {
     Main,
@@ -100,5 +101,5 @@ export const S = {
     Photo,
     MainTitile,
     Name,
-    SmallText,    
-}
+    SmallText,
+};

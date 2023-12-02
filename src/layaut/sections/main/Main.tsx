@@ -1,12 +1,14 @@
 import React from "react";
 import photo from "../../../assets/images/foto.webp";
 import { FlexWrapper } from "../../../components/FlexWrapper";
-import { Container } from "../../../components/Сontainer";
+import { Container } from "../../../components/Container";
 import { S } from "./Main_Styles";
+import Typewriter from "typewriter-effect";
+import Tilt from "react-parallax-tilt";
 
 export const Main: React.FC = () => {
     return (
-        <S.Main>
+        <S.Main id={"home"}>
             <Container>
                 <FlexWrapper
                     align={"center"}
@@ -19,13 +21,30 @@ export const Main: React.FC = () => {
                             I am <span>Alexander Shchirov</span>
                         </S.Name>
                         <S.MainTitile>
-                            Rescuer before - a Web developer now.
+                            <p>A Web developer.</p>
+                            <Typewriter
+                                options={{
+                                    strings: [
+                                        "The Rescuer before",
+                                        "A Web developer now.",
+                                    ],
+                                    autoStart: true,
+                                    loop: true,
+                                    delay: 100,
+                                }}
+                            />
                         </S.MainTitile>
                     </div>
-
-                    <S.PhotoWrapper>
-                        <S.Photo src={photo} alt="my foto" />
-                    </S.PhotoWrapper>
+                    <Tilt
+                        glareEnable={true}
+                        glareMaxOpacity={0.9}
+                        glareColor="lightblue"
+                        glarePosition="all"
+                    >
+                        <S.PhotoWrapper>
+                            <S.Photo src={photo} alt="my foto" />
+                        </S.PhotoWrapper>
+                    </Tilt>
                 </FlexWrapper>
             </Container>
         </S.Main>

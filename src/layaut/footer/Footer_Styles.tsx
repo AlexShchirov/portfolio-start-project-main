@@ -3,6 +3,7 @@ import { theme } from "../../styles/Theme";
 import { font } from "../../styles/Commons";
 
 const Footer = styled.footer`
+    position: relative;
     background-color: ${theme.colors.primaryBg};
     padding: 40px 0 40px;
 `;
@@ -51,7 +52,6 @@ const Copyright = styled.small`
     font-weight: 400;
 `;
 
-
 export const S = {
     Footer,
     Name,
@@ -59,4 +59,4 @@ export const S = {
     SocialItem,
     SocialLink,
     Copyright,
-}
+};

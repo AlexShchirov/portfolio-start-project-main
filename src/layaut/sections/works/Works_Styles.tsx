@@ -5,17 +5,16 @@ import { theme } from "../../../styles/Theme";
 import { Link } from "../../../components/Link";
 
 const Works = styled.section`
+    position: relative;
     ${FlexWrapper} {
         gap: 30px;
     }
 `;
 
-
 const Work = styled.div`
     background-color: ${theme.colors.secondaryBg};
-    width: 330px;
-    flex-grow: 1;
-
+    width: 540px; //330px
+    flex-grow: 0;
     ${Link} {
         padding: 10px 0;
     }
@@ -92,7 +91,6 @@ const Text = styled.p`
     margin: 14px 0 10px;
 `;
 
-
 export const S = {
     Works,
     Work,
@@ -101,4 +99,4 @@ export const S = {
     Discription,
     Title,
     Text,
-}
+};

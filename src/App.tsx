@@ -7,11 +7,14 @@ import {Testimony} from "./layaut/sections/testimony/Testimony";
 import {Contact} from "./layaut/sections/contacts/Contacts";
 import {Slogan} from "./layaut/sections/slogan/Slogan";
 import {Footer} from "./layaut/footer/Footer";
+import { Particle } from './components/particle/Particle';
 
 
 function App() {
     return (
         <div className="App">
+            <Particle/>
+            
             <Header/>
             <Main/>
             <Skills/>

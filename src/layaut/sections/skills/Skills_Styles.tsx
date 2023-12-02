@@ -1,11 +1,12 @@
 import styled from "styled-components";
 import { theme } from "../../../styles/Theme";
 
-const Skills = styled.section``;
-
+const Skills = styled.section`
+    position: relative;
+`;
 
 const Skill = styled.div`
-    width: 330px;   //380px
+    width: 330px; //380px
     flex-grow: 1;
     padding: 42px 20px 52px;
 
@@ -48,4 +49,4 @@ export const S = {
     IconWrapper,
     Title,
     Text,
-}
+};
