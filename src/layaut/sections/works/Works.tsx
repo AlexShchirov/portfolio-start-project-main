@@ -7,6 +7,7 @@ import { Container } from "../../../components/Container";
 import { Work } from "./work/Work";
 import { S } from "./Works_Styles";
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 
 //const tabsItems = ["All", "Landing  page", "React", "spa"];
 
@@ -38,12 +39,14 @@ const worksData = [
         src: socialImg,
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         type: "spa",
+        id: 1,
     },
     {
         title: "Timer",
         src: timerImg,
         text: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua Ut enim. Lorem ipsum dolor sit amet, consectetur adipisicing elit.",
         type: "react",
+        id: 2,
     },
 ];
 
@@ -79,11 +82,26 @@ export const Works: React.FC = () => {
                     align={"flex-start"}
                     wrap={"wrap"}
                 >
-                    {filteredWorks.map((w) => {
-                        return (
-                            <Work title={w.title} src={w.src} text={w.text} />
-                        );
-                    })}
+                    <AnimatePresence>
+                        {filteredWorks.map((w) => {
+                            return (
+                                <motion.div
+                                layout = { true}
+                                initial= {{opacity: 0}}
+                                animate= {{opacity: 1}}
+                                exit={{opacity:0}}
+                                key={w.id}
+                                >
+                                    <Work
+                                        title={w.title}
+                                        src={w.src}
+                                        text={w.text}
+                                        key={w.id}
+                                    />
+                                </motion.div>
+                            );
+                        })}
+                    </AnimatePresence>
                 </FlexWrapper>
             </Container>
         </S.Works>

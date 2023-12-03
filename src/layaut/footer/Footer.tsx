@@ -24,15 +24,15 @@ export const Footer: React.FC = () => {
             <FlexWrapper direction={"column"} align={"center"}>
                 <S.Name>Alexander</S.Name>
                 <S.SocialList>
-                    {SocialItemsData.map((i, index) => {
+                    {SocialItemsData.map((s, index) => {
                         return (
                             <S.SocialItem key={index}>
                                 <S.SocialLink>
                                     <Icon
-                                        height={"21px"}
-                                        width={"21px"}
-                                        viewBox={"0 0 21px 21px"}
-                                        iconId={i.iconId}
+                                        height={"21"}
+                                        width={"21"}
+                                        viewBox={"0 0 21 21"}
+                                        iconId={s.iconId}
                                     />
                                 </S.SocialLink>
                             </S.SocialItem>

@@ -8,6 +8,7 @@ import {Contact} from "./layaut/sections/contacts/Contacts";
 import {Slogan} from "./layaut/sections/slogan/Slogan";
 import {Footer} from "./layaut/footer/Footer";
 import { Particle } from './components/particle/Particle';
+import { GoTopByn } from './components/goTopBtn/GoTopBtn';
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
             <Contact/>
             <Slogan/>
             <Footer/>
+            <GoTopByn/>
         </div>
     );
 }

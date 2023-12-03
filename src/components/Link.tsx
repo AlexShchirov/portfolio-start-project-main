@@ -7,6 +7,8 @@ export const Link = styled.a<{ active?: boolean }>`
     letter-spacing: 1px;
     text-transform: uppercase;
     padding: 10px;
+    margin: 0 10px 0 0; //!!! его не было/ не понятно как отображает браузер отступ, то есть он то его нету
+
 
     position: relative;
     z-index: 0;
@@ -20,7 +22,6 @@ export const Link = styled.a<{ active?: boolean }>`
     &::before {
         content: "";
         display: inline-block;
-        //height: 10px;
         background-color: ${theme.colors.accent};
 
         position: absolute;
@@ -28,6 +29,9 @@ export const Link = styled.a<{ active?: boolean }>`
         left: 0;
         right: 0;
         z-index: -1;
+
+        height: 0;
+        transition: ${theme.animations.transition}; 
 
         ${(props) =>
             props.active === true &&
